@@ -9,6 +9,7 @@ function git-get-branches-list-short {
   git for-each-ref --format='%(refname:short)' refs/heads
 }
 New-Variable -Name my_scripts_directory -Value (Join-Path $env:USERPROFILE 'Documents\PowerShell\MyScripts') -Visibility Private -Option Constant
+New-Variable -Name git_branches_in_local_not_in_distant_repo_file -Value (Join-Path $env:TEMP 'git_branches_in_local_not_in_distant_repo.txt') -Visibility Private -Option Constant
 function git-get-local-branches-not-in-distant-repo {
   $script = Join-Path $my_scripts_directory 'git_get_local_branches_not_in_distant_repo.ps1'
   & $script
