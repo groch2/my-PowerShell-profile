@@ -1,0 +1,1 @@
+get-all-files-in-directory-recurse | where { ($_ -notmatch '\\\bbin\b\\') -and ($_ -notmatch '\\\bobj\b\\') -and ($_ -notmatch '\\\bnode_modules\b\\') -and ($_ -match '\.(\b\w+\b)$') } | foreach { $_ -replace '^.*\.(\b\w+\b)$', '$1' } | Sort-Object | Get-Unique

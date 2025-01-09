@@ -1,0 +1,1 @@
+get-all-files-in-directory-recurse | where { $_ -match '^.*\.(\bcsproj\b)$' } | foreach { @{ Path = $_; Content = [xml](Get-Content -Path $_) } } | foreach { $_.Content.Project.PropertyGroup.TargetFramework = 'net8.0'; $sw = New-Object System.IO.StreamWriter($_.Path, $false, [System.Text.Encoding]::UTF8); $_.Content.Save($sw); $sw.Close(); }

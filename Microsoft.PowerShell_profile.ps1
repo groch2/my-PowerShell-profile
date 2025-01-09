@@ -32,4 +32,8 @@ function git-rename-branche($oldName, $newName) {
   $script = Join-Path $my_scripts_directory 'git_rename_branche.ps1'
   & $script -newName $newName -oldName $oldName
 }
+function restart-application-pool($server_domain_name, $application_pool_name) {
+  $script = Join-Path $my_scripts_directory 'restart-application-pool.ps1'
+  & $script -server_domain_name $server_domain_name -application_pool_name $application_pool_name
+}
 # function custom-command-test { Get-Date | Write-Host }
