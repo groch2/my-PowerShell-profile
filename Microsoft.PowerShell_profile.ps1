@@ -21,6 +21,10 @@ function get-all-files-in-directory-recurse($directory) {
   $script = Join-Path $my_scripts_directory 'get_all_files_in_directory_recurse.ps1'
   & $script -directory $directory
 }
+function get-all-sub-directories-in-directory-recurse($directory) {
+  $script = Join-Path $my_scripts_directory 'get_all_sub_directories_in_directory_recurse.ps1'
+  & $script -directory $directory
+}
 function git-save-branches-with-current-head-commit {
   $script = Join-Path $my_scripts_directory 'git_save_branches_with_current_head_commit.ps1'
   & $script
